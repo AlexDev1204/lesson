@@ -1,0 +1,63 @@
+.users {
+  width: 100%;
+  padding: 30px;
+  background-color: rgba(128, 128, 128, 0.329);
+}
+.row {
+  width: 100%;
+  height: 50px;
+  background-color: rgba(128, 128, 128, 0.438);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.row-light {
+  width: 100%;
+  height: 50px;
+  background-color: rgba(19, 44, 36, 0.438);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.ceil {
+  width: 25%;
+  padding: 10px;
+  color: #ffffff;
+  display: flex;
+  align-items: start;
+  position: relative;
+}
+.more {
+  width: 100px;
+  height: 32px;
+  background-color: rgba(76, 0, 130, 0.767);
+  color: #fff;
+  font-size: 12px;
+  border: none;
+  border-radius: 4px;
+  text-transform: uppercase;
+  outline: none;
+  cursor: pointer;
+}
+.more:hover > div {
+  display: block;
+}
+.remove {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  margin: 0 12px 0 auto;
+  outline: none;
+  cursor: pointer;
+  background-color: rgba(255, 0, 0, 0.65);
+  border: none;
+  border-radius: 4px;
+}
+.remove > svg {
+  margin: auto;
+}
+.remove > svg path {
+  stroke: #fff;
+}
