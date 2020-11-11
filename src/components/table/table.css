@@ -2,6 +2,7 @@
   width: 100%;
   padding: 30px;
   background-color: rgba(128, 128, 128, 0.329);
+  margin-bottom: 30px;
 }
 .row {
   width: 100%;
@@ -20,6 +21,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  transition: all 0.3s linear;
 }
 .ceil {
   width: 25%;
@@ -60,4 +62,51 @@
 }
 .remove > svg path {
   stroke: #fff;
+}
+.row-done {
+  width: 100%;
+  height: 50px;
+  background-color: rgba(38, 126, 11, 0.438);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.3s linear;
+}
+.status {
+  margin-left: auto;
+  width: 100px;
+  height: 32px;
+  color: #fff;
+  font-size: 12px;
+  border: none;
+  border-radius: 4px;
+  text-transform: uppercase;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+.done {
+  background-color: #194fe7c4;
+}
+.undone {
+  background-color: #9e9e9e;
+}
+
+.sort {
+  margin: 10px;
+  width: 100px;
+  height: 32px;
+  color: #fff;
+  font-size: 12px;
+  border: none;
+  border-radius: 4px;
+  text-transform: uppercase;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s linear;
+  background-color: #194fe7c4;
+}
+.active {
+  background-color: #e71982c4;
 }

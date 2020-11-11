@@ -2,11 +2,11 @@ import "./App.css";
 import React from "react";
 
 import Table from "./components/table";
+import { List } from "./components/list";
 
 export default class App extends React.Component {
-  state = { tableExist: true, tableName: "Users" };
+  state = { tableExist: true, tableName: "Users", todos: true };
 
-  componentDidMount() {}
   render() {
     return (
       <div className="App">
@@ -15,6 +15,7 @@ export default class App extends React.Component {
         ) : (
           <div>Table was removed</div>
         )}
+        <List name="To do" />
       </div>
     );
   }

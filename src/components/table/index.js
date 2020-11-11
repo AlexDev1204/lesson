@@ -11,7 +11,6 @@ export default class Table extends Component {
   };
 
   shouldComponentUpdate(p, s) {
-    console.log(p, s, this.state);
     return true;
   }
   componentDidMount() {
