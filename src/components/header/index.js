@@ -7,9 +7,9 @@ import { navigation } from "../../navigation";
 
 export const Header = () => {
   const renderNav = () => {
-    return navigation.map(({ name, route }) => {
+    return navigation.map(({ name, route, reg }) => {
       return (
-        <Link className="nav-link" to={route} key={route}>
+        <Link className={`nav-link `} to={route} key={route}>
           {name}
         </Link>
       );
