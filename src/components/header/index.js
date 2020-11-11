@@ -1,0 +1,24 @@
+import React from "react";
+import { Link } from "react-router-dom";
+
+import "./header.css";
+import { ReactComponent as Logo } from "../../logo.svg";
+import { navigation } from "../../navigation";
+
+export const Header = () => {
+  const renderNav = () => {
+    return navigation.map(({ name, route }) => {
+      return (
+        <Link className="nav-link" to={route} key={route}>
+          {name}
+        </Link>
+      );
+    });
+  };
+  return (
+    <header className="header">
+      <Logo />
+      <nav className="nav">{renderNav()}</nav>
+    </header>
+  );
+};

@@ -1,0 +1,28 @@
+.header {
+  width: 100vw;
+  height: 70px;
+  background-color: royalblue;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+}
+.header > svg {
+  height: 50px;
+}
+.nav {
+  margin-left: 30px;
+  display: flex;
+  align-items: center;
+}
+.nav-link {
+  margin-right: 20px;
+  font-size: 14px;
+  color: aliceblue;
+  text-decoration: none;
+}
+.nav > .active-link {
+  font-weight: bold;
+}
+.nav-link:last-child {
+  margin-right: 0;
+}
