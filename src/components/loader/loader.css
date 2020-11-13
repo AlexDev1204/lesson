@@ -1,0 +1,52 @@
+.preloader {
+  background: #8aaae5;
+  max-width: 100vw;
+  max-height: 100vh;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.loader {
+  width: 20vw;
+  height: 20vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: move 17s ease-out 1s infinite;
+  overflow: hidden;
+}
+
+.one,
+.two,
+.three,
+.num-for {
+  width: 1em;
+  height: 1em;
+  background-color: #ffffff;
+  border-radius: 100px;
+}
+
+.two {
+  position: relative;
+  top: 1.5em;
+  left: 0.5em;
+}
+
+.three {
+  position: relative;
+  top: -1.5em;
+  left: -0.5em;
+}
+
+@keyframes move {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(11520deg);
+  }
+}

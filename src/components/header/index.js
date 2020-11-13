@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 
 import "./header.css";
 import { ReactComponent as Logo } from "../../logo.svg";
@@ -22,3 +23,5 @@ export const Header = () => {
     </header>
   );
 };
+
+export default connect(({ count, text }) => ({ count, text }))(Header);

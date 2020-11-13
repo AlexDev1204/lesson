@@ -1,24 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { connect } from "react-redux";
 
-import Api from "../../helpers/api";
-
-export const Posts = () => {
-  const [posts, setPosts] = useState(null);
-
-  useEffect(() => {
-    Api.getPosts().then((p) => setPosts(p));
-  }, []);
-
-  const renderPosts = () => {
-    return posts.map(({ userId, title, id, body }, i) => (
-      <div key={id} className={i % 2 ? "row-done" : "row-light"}>
-        <div className="ceil">{id}</div>
-        <div className="ceil">{userId}</div>
-        <div className="ceil">{title}</div>
-        <div className="ceil">{body}</div>
+const Posts = ({ posts }) => {
+  const renderRows = () =>
+    posts.map((el, i) => (
+      <div key={i} className={i % 2 ? "row" : "row-light"}>
+        {JSON.stringify(el)}
       </div>
     ));
-  };
 
-  return <div>{posts && renderPosts()}</div>;
+  return (
+    <div>
+      <h3>Posts</h3>
+      {renderRows()}
+    </div>
+  );
 };
+
+export default connect(({ posts }) => ({ posts }))(Posts);

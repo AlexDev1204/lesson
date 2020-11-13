@@ -9,3 +9,39 @@
   background-color: rgba(112, 128, 144, 0.315);
   padding: 20px 30px;
 }
+.row {
+  padding: 20px;
+  width: 100%;
+  min-height: 50px;
+  background-color: rgba(128, 128, 128, 0.438);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.row-light {
+  padding: 20px;
+  width: 100%;
+  min-height: 50px;
+  background-color: rgba(19, 44, 36, 0.438);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.3s linear;
+}
+.row-dark {
+  padding: 20px;
+  width: 100%;
+  min-height: 50px;
+  background-color: rgba(20, 207, 148, 0.438);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.3s linear;
+}
+h3 {
+  margin: 0 0 30px;
+  text-align: center;
+}

@@ -1,21 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { connect } from "react-redux";
 
-import Api from "../../helpers/api";
-import { List } from "../../components/list";
-
-export const Todo = () => {
-  const [todo, setTodo] = useState([]);
-
-  useEffect(() => {
-    Api.getTodos().then((t) => {
-      console.log(t);
-      setTodo(t);
-    });
-  }, []);
+const Todo = ({ todos }) => {
+  const renderRows = () =>
+    todos.map((el, i) => (
+      <div key={i} className={i % 2 ? "row" : "row-light"}>
+        {JSON.stringify(el)}
+      </div>
+    ));
 
   return (
     <div>
-      <List data={todo} />
+      <h3>To dos</h3>
+      {renderRows()}
     </div>
   );
 };
+
+export default connect(({ todos }) => ({ todos }))(Todo);

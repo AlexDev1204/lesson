@@ -1,18 +1,22 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import { connect } from "react-redux";
 
-import Api from "../../helpers/api";
-import Table from "../../components/table";
-
-export const Users = () => {
-  const [users, setUsers] = useState(null);
-
-  useEffect(() => {
-    Api.getUsers().then((users) => setUsers(users));
-  }, []);
+export const Users = ({ users }) => {
+  const renderRows = () =>
+    users.map((el, i) => (
+      <div key={i} className={i % 2 ? "row" : "row-light"}>
+        {JSON.stringify(el)}
+      </div>
+    ));
 
   return (
     <div>
-      <Table users={users} />
+      <h3>Users</h3>
+      {renderRows()}
     </div>
   );
 };
+
+const mapStateToProps = (state) => ({ users: state.users });
+
+export default connect(mapStateToProps, null)(Users);
