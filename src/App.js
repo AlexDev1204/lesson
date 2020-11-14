@@ -1,5 +1,5 @@
 import React from "react";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Router } from "react-router-dom";
 import { connect } from "react-redux";
 
 import "./App.css";
@@ -50,7 +50,17 @@ class App extends React.Component {
           <Header />
           <div className="wrapper">
             <Switch>
-              <Route exact path="/" component={() => <div>no route</div>} />
+              <Route
+                exact
+                path="/"
+                component={(props) => {
+                  setTimeout(() => {
+                    props.history.push("/users");
+                  }, 0);
+
+                  return null;
+                }}
+              />
               <Route exact path="/users" component={Users} />
               <Route exact path="/comments" component={Comments} />
               <Route exact path="/comment/:id" component={Comment} />

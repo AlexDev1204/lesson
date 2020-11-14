@@ -1,13 +1,16 @@
 .header {
   width: 100vw;
   height: 70px;
-  background-color: royalblue;
+  background-color: #03256c;
   padding: 0 40px;
   display: flex;
   align-items: center;
 }
 .header > svg {
   height: 50px;
+}
+.header > svg > g {
+  fill: #06bee1;
 }
 .nav {
   margin-left: 30px;
@@ -25,4 +28,8 @@
 }
 .nav-link:last-child {
   margin-right: 0;
+}
+[data-active="true"] {
+  text-decoration: underline;
+  color: #fff;
 }
