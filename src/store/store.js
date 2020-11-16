@@ -1,5 +1,8 @@
 import { createStore } from "redux";
 
+const fav = localStorage.getItem("favorites");
+const buy = localStorage.getItem("basket");
+
 const initialState = {
   users: [],
   posts: [],
@@ -7,6 +10,8 @@ const initialState = {
   todos: [],
   dataIsReady: false,
   message: "",
+  favorites: fav ? JSON.parse(fav) : [],
+  basket: buy ? JSON.parse(buy) : [],
 };
 
 function reducer(state = initialState, action) {
@@ -23,6 +28,10 @@ function reducer(state = initialState, action) {
       return { ...state, dataIsReady: true };
     case "SET MESSAGE":
       return { ...state, message: action.payload.message };
+    case "ADD TO FAVORITE":
+      return { ...state, favorites: action.payload.favorites };
+    case "ADD TO BASKET":
+      return { ...state, basket: action.payload.basket };
     default:
       return state;
   }

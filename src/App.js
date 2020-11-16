@@ -8,11 +8,12 @@ import Header from "./components/header";
 import { Footer } from "./components/footer";
 
 import Users from "./pages/users";
-import Posts from "./pages/posts";
-import Todo from "./pages/todo";
 import Comments from "./pages/comments";
 import { Comment } from "./pages/singleComment";
 import { Loader } from "./components/loader";
+import List from "./pages/list";
+import Favorites from "./pages/favorites";
+import Basket from "./pages/basket";
 
 import Api from "./helpers/api";
 //actions
@@ -55,17 +56,15 @@ class App extends React.Component {
                 path="/"
                 component={(props) => {
                   setTimeout(() => {
-                    props.history.push("/users");
+                    props.history.push("/list");
                   }, 0);
 
                   return null;
                 }}
               />
-              <Route exact path="/users" component={Users} />
-              <Route exact path="/comments" component={Comments} />
-              <Route exact path="/comment/:id" component={Comment} />
-              <Route exact path="/todos" component={Todo} />
-              <Route exact path="/posts" component={Posts} />
+              <Route exact path="/list" component={List} />
+              <Route exact path="/favorites" component={Favorites} />
+              <Route exact path="/basket" component={Basket} />
               <Route component={() => <div>404</div>} />
             </Switch>
           </div>

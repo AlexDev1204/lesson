@@ -1,6 +1,34 @@
 import styled from "styled-components";
 import config from "../../config/themes";
 
+import { Link } from "react-router-dom";
+
+export const NavLink = styled(Link)`
+  margin-right: 20px;
+  font-size: 14px;
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+  &:last-child {
+    margin-right: 0;
+  }
+  &:before {
+    display: ${({ count }) => (count ? "flex" : "none")};
+    width: 20px;
+    height: 20px;
+    content: ${({ count }) => `'${count}'`};
+    background: #e1aa06;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    position: absolute;
+    border-radius: 50%;
+    right: -19px;
+    top: -12px;
+  }
+`;
+
 export const Switcher = styled.button`
   width: 70px;
   height: 32px;
@@ -32,17 +60,36 @@ export const HeaderS = styled.header`
     margin-left: ${({ theme }) => `${config[theme].fs * 2.5}px`};
     display: flex;
     align-items: center;
-    > a {
-      margin-right: ${({ theme }) => `${config[theme].fs * 1.5}px`};
-      font-size: ${({ theme }) => `${config[theme].fs}px`};
-      color: ${({ theme }) => config[theme].text1};
-      text-decoration: ${({ active }) => (active ? "underline" : "none")};
-      &:last-child {
-        margin-right: 0;
-      }
-    }
   }
   * {
     transition: all 0.1s linear;
+  }
+`;
+
+export const Basket = styled(Link)`
+  display: flex;
+  margin-left: auto;
+  position: relative;
+  &:before {
+    display: ${({ count }) => (count ? "flex" : "none")};
+    width: 20px;
+    height: 20px;
+    content: ${({ count }) => `'${count}'`};
+    background: #06bee1;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    position: absolute;
+    border-radius: 50%;
+    right: -5px;
+  }
+  > svg {
+    width: 45px;
+    height: 45px;
+    margin: auto;
+    path {
+      fill: #fff;
+    }
   }
 `;
