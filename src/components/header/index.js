@@ -1,29 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
 import "./header.css";
 import { ReactComponent as Logo } from "../../logo.svg";
 import { navigation } from "../../navigation";
-import { useCheckRoute, useActiveRoute } from "../../history";
+import { useCheckRoute } from "../../history";
+import { Switcher, HeaderS } from "./styled";
 
 export const Header = () => {
+  const [theme, setTheme] = useState("dark");
+  const isDark = theme === "dark";
+
   const currentRoute = useCheckRoute();
   console.log(currentRoute);
   const renderNav = () => {
     return navigation.map(({ name, route }) => {
       return (
-        <Link data-active={currentRoute === route} className="nav-link" to={route} key={route}>
+        <Link active={currentRoute === route} to={route} key={route}>
           {name}
         </Link>
       );
     });
   };
   return (
-    <header className="header">
+    <HeaderS theme={theme}>
       <Logo />
-      <nav className="nav">{renderNav()}</nav>
-    </header>
+      <nav>{renderNav()}</nav>
+      <Switcher theme={theme} onClick={() => setTheme(isDark ? "light" : "dark")}>
+        {isDark ? "light" : "dark"}
+      </Switcher>
+    </HeaderS>
   );
 };
 
